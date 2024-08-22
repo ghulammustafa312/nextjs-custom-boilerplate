@@ -44,11 +44,11 @@ Install dependencies:
   Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Project Structure
-├── components/     # React components
-├── app/            # Next.js pages
-├── public/         # Static files
-├── styles/         # Global styles
-├── utils/          # Utility functions and custom hooks
-├── lib/            # API services (RTK Query)
-├── middleware.js   # Next.js middleware
+├── components/     # React components <br />
+├── app/            # Next.js pages <br />
+├── public/         # Static files <br />
+├── styles/         # Global styles <br />
+├── utils/          # Utility functions and custom hooks <br />
+├── lib/            # API services (RTK Query) <br />
+├── middleware.js   # Next.js middleware <br />
 └── types/          # Types for validation
