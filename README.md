@@ -50,5 +50,5 @@ Install dependencies:
 ├── styles/         # Global styles <br />
 ├── utils/          # Utility functions and custom hooks <br />
 ├── lib/            # API services (RTK Query) <br />
-├── middleware.js   # Next.js middleware <br />
+├── middleware.ts   # Next.js middleware <br />
 └── types/          # Types for validation
