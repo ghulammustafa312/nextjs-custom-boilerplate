@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js 14 Project with MUI, RTK Query, and More
+
+## Introduction
+
+This project is a modern web application built with Next.js 14, leveraging a powerful stack of technologies to create a robust, scalable, and user-friendly experience. Below is an overview of the key technologies used and instructions for setting up and running the project.
+
+## Technologies Used
+
+### Next.js 14
+Next.js is a React framework that enables features such as server-side rendering and generating static websites. Version 14 brings performance improvements and new features to enhance the development experience.
+
+### Material-UI (MUI)
+MUI is a popular React UI framework that implements Google's Material Design. It provides a set of customizable, accessible, and responsive components to build user interfaces quickly.
+
+### Redux Toolkit (RTK) and RTK Query
+Redux Toolkit is the official, opinionated toolset for efficient Redux development. RTK Query is an advanced data fetching and caching tool, reducing the need for manual data fetching and state management code.
+
+### React Hook Form
+A performant, flexible, and extensible form library for React. It provides an easy way to validate forms with less code and better performance.
+
+### Zod
+Zod is a TypeScript-first schema declaration and validation library. It's used in this project for robust input validation.
+
+### React Hot Toast
+A lightweight, customizable toast notification library for React applications, providing a smooth user experience for displaying alerts and messages.
+
+### Next.js Middleware
+Middleware in Next.js allows you to run code before a request is completed, enabling custom server-side logic for authentication, redirects, and more.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js (version 18 preferred)
+- npm or yarn (preferred)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Installation
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Install dependencies:
+  `yarn install`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Running the Development Server
+  `npm run dev`
+  
+  Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Project Structure
+├── components/     # React components
+├── app/            # Next.js pages
+├── public/         # Static files
+├── styles/         # Global styles
+├── utils/          # Utility functions and custom hooks
+├── lib/            # API services (RTK Query)
+├── middleware.js   # Next.js middleware
+└── types/          # Types for validation
