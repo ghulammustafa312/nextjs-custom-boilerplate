@@ -2,9 +2,9 @@
 import { NextResponse,NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
-  const token = request.cookies.get('token') //||"token";
+  const token = request.cookies.get('token')?.value //||"token";
   // List of paths that don't require authentication
-  const publicPaths = ['/login', '/register'];
+  const publicPaths = ['/login', '/signup'];
 
   if (!token && !publicPaths.includes(request.nextUrl.pathname)) {
     return NextResponse.redirect(new URL('/login', request.url));
