@@ -87,7 +87,7 @@ const LoginPage: React.FC = () => {
       </form>
       <Box sx={{ mt: 2, textAlign: 'center' }}>
         <Typography variant="body2">
-          Don't have an account?{' '}
+          Don&apos;t have an account?
           <Link href="/signup" passHref>
             <MuiLink component="span">Sign up</MuiLink>
           </Link>

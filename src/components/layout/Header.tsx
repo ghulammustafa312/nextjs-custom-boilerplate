@@ -1,19 +1,32 @@
-'use client'
+"use client";
 import { usePathname, useRouter } from "next/navigation";
-import React, { useState } from "react";
-import Link from 'next/link'
-import { AppBar, Grid, IconButton, List, ListItem, ListItemButton, ListItemText, SwipeableDrawer, Toolbar, Typography, useMediaQuery, useScrollTrigger } from "@mui/material";
+import React, { ReactElement, ReactNode, useState } from "react";
+import Link from "next/link";
+import {
+  AppBar,
+  Grid,
+  IconButton,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  SwipeableDrawer,
+  Toolbar,
+  Typography,
+  useMediaQuery,
+  useScrollTrigger,
+} from "@mui/material";
 import { Menu } from "@mui/icons-material";
-import {makeStyles} from '@mui/styles'
+import { makeStyles } from "@mui/styles";
 import { useTheme } from "@emotion/react";
+import { Theme } from "@/styles/theme/types";
 
-const routes=[
-    {name:'Home',link:'/'},
-    {name:'About',link:'/about'}
-]
+const routes = [
+  { name: "Home", link: "/" },
+  { name: "About", link: "/about" },
+];
 
-
-function ElevationScroll(props) {
+function ElevationScroll(props: { children: ReactElement }) {
   const { children } = props;
 
   const trigger = useScrollTrigger({
@@ -26,7 +39,7 @@ function ElevationScroll(props) {
   });
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme:Theme) => ({
   toolbarMargin: {
     ...theme.mixins.toolbar,
     marginBottom: `5em`,
@@ -72,9 +85,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Header = () => {
-  const classes = useStyles();
-  const theme = useTheme();
-  const iOS = typeof navigator !== 'undefined' && /iPad|iPhone|iPod/.test(navigator.userAgent);
+  const classes:any = useStyles();
+  const theme:any = useTheme();
+  const iOS =
+    typeof navigator !== "undefined" &&
+    /iPad|iPhone|iPod/.test(navigator.userAgent);
   const matches = useMediaQuery(theme.breakpoints.down("sm"));
 
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -85,23 +100,23 @@ const Header = () => {
   const path = routes;
 
   const tabs = (
-      <Grid container justifyContent="flex-end" spacing={4}>
-        {path.map(({ name, link }) => (
-          <Grid item key={link}>
-            <Link href={link}>
-              <Typography
-                className={classes.link}
-                style={{
-                  fontWeight: pathname === link ? "bold":"normal",
-                  borderBottom: pathname === link ? "1px solid #757ce8":"none",
-                }}
-              >
-                {name}
-              </Typography>
-            </Link>
-          </Grid>
-        ))}
-      </Grid>
+    <Grid container justifyContent="flex-end" spacing={4}>
+      {path.map(({ name, link }) => (
+        <Grid item key={link}>
+          <Link href={link}>
+            <Typography
+              className={classes.link}
+              style={{
+                fontWeight: pathname === link ? "bold" : "normal",
+                borderBottom: pathname === link ? "1px solid #757ce8" : "none",
+              }}
+            >
+              {name}
+            </Typography>
+          </Link>
+        </Grid>
+      ))}
+    </Grid>
   );
   const drawer = (
     <>
@@ -120,7 +135,7 @@ const Header = () => {
             <ListItemButton
               key={link}
               divider
-            //   button
+              //   button
               onClick={() => {
                 setOpenDrawer(false);
               }}
@@ -129,11 +144,8 @@ const Header = () => {
                 <Link href={link}>
                   <Typography
                     style={{
-                      color:
-                        pathname === link
-                          ? "primary"
-                          : "rgb(107 107 107)",
-                      fontWeight: pathname === link ? "bold":"normal",
+                      color: pathname === link ? "primary" : "rgb(107 107 107)",
+                      fontWeight: pathname === link ? "bold" : "normal",
                     }}
                   >
                     {name}
